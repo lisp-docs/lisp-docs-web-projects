@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
-import { LispDocsUtils } from '@lisp-docs/utils';
+import { Utils } from '@lisp-docs/utils';
 
 // import NxWelcome from './nx-welcome';
 
@@ -9,7 +9,7 @@ export function App() {
     <div>
       {/* <NxWelcome title="lisp-docs-web-projects" /> */}
       <p>Hello world!</p>
-      <LispDocsUtils></LispDocsUtils>
+      <Utils></Utils>
     </div>
   );
 }
