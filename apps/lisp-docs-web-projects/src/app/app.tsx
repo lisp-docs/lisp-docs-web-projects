@@ -11,6 +11,7 @@ export function App() {
       <p>Hello world!</p>
       <Utils></Utils>
       <DefinitionTooltips>Hello World! this is a child <b>this is another child</b></DefinitionTooltips>
+      <DefinitionTooltips>progn</DefinitionTooltips>
     </div>
   );
 }
