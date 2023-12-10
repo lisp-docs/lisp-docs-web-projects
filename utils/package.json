@@ -1,6 +1,21 @@
 {
   "name": "@lisp-docs/utils",
   "version": "0.0.1",
+  "description": "Common Lisp Technical Reference Tooltips and Links",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lisp-docs/lisp-docs-web-projects"
+  },
+  "keywords": [
+    "common-lisp",
+    "lisp"
+  ],
+  "author": {
+    "name": "Daniel Nussenbaum"
+  },
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
