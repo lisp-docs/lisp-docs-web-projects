@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "allowJs": false,
+    "allowJs": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
+    "resolveJsonModule": true,
+    // "esModuleInterop": true,
     "types": ["vite/client", "vitest"]
   },
   "files": [],
