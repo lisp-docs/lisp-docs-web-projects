@@ -17,8 +17,6 @@ interface DefinitionDictionary {
 const REFERENCE_URL =
   'https://lisp-docs.github.io/cl-language-reference/docs/chap-26/';
 const DICTIONARY_URL = 'https://lisp-docs.github.io/cl-language-reference/';
-// const DEFINITION_SOURCE = " Common Lisp Technical Reference";
-// const DEFINITION_SOURCE = " https://lisp-docs.github.io/";
 const GLOSSARY: DefinitionDictionary = glossaryJson;
 const DICTIONARY: LetterDictionary = dictionaryJson;
 
@@ -62,15 +60,11 @@ export function ReferenceLink(props: ReferenceLinkProps) {
           <a href={getDefinitionLink()}>{props.children}</a>
       );
     } else {
-      console.error('not found!');
-      console.error(props.children);
-      console.error(typeof props.children);
-      console.error(glossaryJson);
       return props.children;
     }
   }
 
-  return <div className={styles['container']}>{getReferenceLink()}</div>;
+  return <span className={styles['container']}>{getReferenceLink()}</span>;
 }
 
 export default ReferenceLink;

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import DefinitionTooltips from './Definition Tooltips';
+import DefinitionTooltips from './definition-tooltips';
 
 describe('DefinitionTooltips', () => {
   it('should render successfully', () => {
