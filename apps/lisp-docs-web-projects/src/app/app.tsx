@@ -14,6 +14,7 @@ export function App() {
       {/* <DefinitionTooltips>progn</DefinitionTooltips> */}
       <DefinitionTooltips>programmer</DefinitionTooltips>
       <DefinitionTooltips>prog tag</DefinitionTooltips>
+      <DefinitionTooltips>progn</DefinitionTooltips>
     </div>
   );
 }
