@@ -5,6 +5,7 @@ import { Tooltip } from 'react-tooltip';
 /* eslint-disable-next-line */
 export interface DefinitionTooltipsProps {
   children?: React.ReactNode;
+  term?: string;
 }
 
 interface LetterDictionary {
@@ -20,6 +21,9 @@ const GLOSSARY: DefinitionDictionary = glossaryJson;
 export function DefinitionTooltips(props: DefinitionTooltipsProps) {
 
   function getInnerString() {
+    if (props.term) {
+      return props.term;
+    }
     let found = false;
     let curr = props.children;
     while (!found) {
