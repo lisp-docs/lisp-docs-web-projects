@@ -68,7 +68,9 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
           data-tooltip-id={innerString}
         >
           {props.children}
-          <Tooltip id={innerString} className={styles.mw40} />
+          {/* https://github.com/ReactTooltip/react-tooltip/issues/210 */}
+          {/* https://stackoverflow.com/questions/41928567/div-cannot-appear-as-a-descendant-of-p */}
+          <Tooltip id={innerString} className={styles.mw40} wrapper="span"/>
         </span>
       );
     } else {
