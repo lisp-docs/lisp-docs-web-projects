@@ -62,7 +62,6 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
     const innerString = getInnerString();
     if (isDefinition() && typeof innerString === 'string') {
       const definition = getDefinition();
-      console.debug(definition);
       return (
         <span
           data-tooltip-content={definition}
