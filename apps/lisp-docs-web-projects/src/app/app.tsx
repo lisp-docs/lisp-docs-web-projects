@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
-import { ReferenceAid } from '@lisp-docs/utils';
+import { ReferenceAid, getLink } from '@lisp-docs/utils';
 
 // import NxWelcome from './nx-welcome';
 
@@ -12,9 +12,20 @@ export function App() {
       {/* <Utils></Utils> */}
       {/* <DefinitionTooltips>Hello World! this is a child <b>this is another child</b></DefinitionTooltips> */}
       {/* <DefinitionTooltips>string</DefinitionTooltips> */}
-      <ReferenceAid>programmer</ReferenceAid  >
-      <ReferenceAid >prog tag</ReferenceAid  >
-      <ReferenceAid >progn</ReferenceAid >
+      
+      <a href={getLink("programmer")}>
+        <ReferenceAid>programmer</ReferenceAid  >
+      </a>
+      <a href={getLink("prog tag")}>
+        <ReferenceAid>prog tag</ReferenceAid  >
+      </a>
+      
+      {/* <ReferenceAid >prog tag</ReferenceAid  > */}
+      {/* <ReferenceAid >progn</ReferenceAid > */}
+      <a href={getLink("progn")}>
+        <ReferenceAid>progn</ReferenceAid  >
+      </a>
+      {/* {getLink("progn")} */}
     </div>
   );
 }

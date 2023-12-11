@@ -1,6 +1,6 @@
 import styles from './Definition Tooltips.module.css';
 import DefinitionTooltips from './definition-tooltips';
-import ReferenceLink from './reference-link';
+// import ReferenceLink from './reference-link';
 /* eslint-disable-next-line */
 export interface ReferenceAidProps {
   children?: React.ReactNode;
@@ -11,7 +11,7 @@ export function ReferenceAid(props: ReferenceAidProps) {
     if (typeof props.children === 'string') {
       return (
         <DefinitionTooltips>
-          <ReferenceLink>{props.children}</ReferenceLink>
+            {props.children}
         </DefinitionTooltips>
       );
     } else {
