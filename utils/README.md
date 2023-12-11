@@ -16,6 +16,18 @@ import { ReferenceAid } from '@lisp-docs/utils';
 
 `<DefinitionTooltips>` and `<ReferenceLink>` are also available in case only the tooltip or link is wanted respectively.
 
-## Dependencies
+## Links
 
-This depends on `react-router-dom@5.3.0`. This old version is because that is the version that [docusaurus.io](https://docusaurus.io) uses.
+Please note because of issues with docusaurus the usage has changed:
+
+To get a link do this:
+
+```react
+import { ReferenceAid, getLink } from '@lisp-docs/utils';
+```
+
+```react
+<a href={getLink("programmer")}>
+    <ReferenceAid>programmer</ReferenceAid  >
+</a>
+```
