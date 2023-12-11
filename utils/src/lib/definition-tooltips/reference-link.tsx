@@ -70,7 +70,7 @@ export function isDictionaryItem(children) {
 export function getDictionaryLink(children) {
   if (typeof children === 'string' && children in DICTIONARY) {
     if (isLocal()) {
-      return DICTIONARY[children];
+      return '/' + DICTIONARY[children];
     } else return DICTIONARY_URL + DICTIONARY[children];
   } else {
     return null;
