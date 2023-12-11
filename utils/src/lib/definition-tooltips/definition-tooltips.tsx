@@ -69,7 +69,7 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
           data-tooltip-id={innerString}
         >
           {props.children}
-          <Tooltip id={innerString} className={styles.mw40} />{' '}
+          <Tooltip id={innerString} className={styles.mw40} />
         </span>
       );
     } else {
