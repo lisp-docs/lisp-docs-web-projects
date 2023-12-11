@@ -5,3 +5,10 @@
  * .container {
  * }
 */
+
+.mw70 {
+    max-width: 70vw;
+}
+
+
+.mw40{ max-width: 40%; }

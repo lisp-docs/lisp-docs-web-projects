@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
-import { ReferenceAid, getLink } from '@lisp-docs/utils';
+import { DefinitionTooltips, ReferenceAid, getLink } from '@lisp-docs/utils';
 
 // import NxWelcome from './nx-welcome';
 
@@ -25,6 +25,8 @@ export function App() {
       <a href={getLink("progn")}>
         <ReferenceAid>progn</ReferenceAid  >
       </a>
+      <br />
+      <DefinitionTooltips>form</DefinitionTooltips>
       {/* {getLink("progn")} */}
     </div>
   );
