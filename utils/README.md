@@ -1,7 +1,17 @@
-# Utils
+# Lisp Docs Usage
 
-This library was generated with [Nx](https://nx.dev).
+## Import
 
-## Running unit tests
+```typescript
+import { ReferenceAid } from '@lisp-docs/utils';
+```
 
-Run `nx test Utils` to execute the unit tests via [Vitest](https://vitest.dev/).
+## Use
+
+```typescript
+<ReferenceAid>programmer</ReferenceAid>
+```
+
+`ReferenceAid` will provide a tooltip or reference if available for the string provided as a `child`.
+
+`<DefinitionTooltips>` and `<ReferenceLink>` are also available in case only the tooltip or link is wanted respectively.
