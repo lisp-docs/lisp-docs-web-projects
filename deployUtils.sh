@@ -1,1 +1,1 @@
-npm publish --access public
+cd dist/utils/ &&  npm publish --access public
