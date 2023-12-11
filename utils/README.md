@@ -15,3 +15,7 @@ import { ReferenceAid } from '@lisp-docs/utils';
 `ReferenceAid` will provide a tooltip or reference if available for the string provided as a `child`.
 
 `<DefinitionTooltips>` and `<ReferenceLink>` are also available in case only the tooltip or link is wanted respectively.
+
+## Dependencies
+
+This depends on `react-router-dom@5.3.0`. This old version is because that is the version that [docusaurus.io](https://docusaurus.io) uses.
