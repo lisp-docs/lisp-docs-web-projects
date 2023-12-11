@@ -1,9 +1,16 @@
 {
   "name": "@lisp-docs/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "license": "MIT",
   "description": "Common Lisp Technical Reference Tooltips and Links",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.20.1",
+    "react-tooltip": "^5.25.0"
   },
   "repository": {
     "type": "git",
