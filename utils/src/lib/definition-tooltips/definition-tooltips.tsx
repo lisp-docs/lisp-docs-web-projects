@@ -1,4 +1,4 @@
-import styles from './Definition Tooltips.module.css';
+// import styles from './Definition Tooltips.module.css';
 import * as glossaryJson from './glossary.json';
 import { Tooltip } from 'react-tooltip';
 // import ReactDOMServer from 'react-dom/server';
@@ -70,7 +70,8 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
           {props.children}
           {/* https://github.com/ReactTooltip/react-tooltip/issues/210 */}
           {/* https://stackoverflow.com/questions/41928567/div-cannot-appear-as-a-descendant-of-p */}
-          <Tooltip id={innerString} className={styles.mw40} wrapper="span"/>
+          {/* className={styles.mw40} */}
+          <Tooltip id={innerString} style={{maxWidth: "40%"}} wrapper="span"/>
         </span>
       );
     } else {
@@ -78,7 +79,7 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
     }
   }
 
-  return <span className={styles['container']}>{getTooltip()}</span>;
+  return <span>{getTooltip()}</span>;
 }
 
 export default DefinitionTooltips;
