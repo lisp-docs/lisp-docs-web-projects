@@ -62,6 +62,7 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
     const innerString = getInnerString();
     if (isDefinition() && typeof innerString === 'string') {
       const definition = getDefinition();
+      // TODO replace Tooltip with https://github.com/atomiks/tippyjs
       return (
         <span
           data-tooltip-content={definition}
