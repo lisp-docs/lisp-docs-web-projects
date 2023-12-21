@@ -17,7 +17,7 @@ interface DefinitionDictionary {
   [key: string]: LetterDictionary;
 }
 
-const GLOSSARY: DefinitionDictionary = glossary;
+const GLOSSARY: DefinitionDictionary = glossary();
 
 export function DefinitionTooltips(props: DefinitionTooltipsProps) {
 

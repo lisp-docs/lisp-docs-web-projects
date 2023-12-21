@@ -1,8 +1,8 @@
 // import styles from './Definition Tooltips.module.css';
 // import * as glossaryJson from './glossary.json';
 // import * as dictionaryJson from './dictionary.json';
-import { glossary } from './glossary.json';
-import { dictionary } from './dictionary.json';
+import { glossary } from './glossary';
+import { dictionary } from './dictionary';
 // import { Link } from 'react-router-dom';
 // import * as dcr from '@docusaurus/core';
 /* eslint-disable-next-line */
@@ -24,8 +24,8 @@ const REFERENCE_URL =
   'https://lisp-docs.github.io/cl-language-reference/docs/chap-26/';
 const LOCAL_DEFINITION = '/docs/chap-26/';
 const DICTIONARY_URL = 'https://lisp-docs.github.io/cl-language-reference/';
-const GLOSSARY: DefinitionDictionary = glossary;
-const DICTIONARY: LetterDictionary = dictionary;
+const GLOSSARY: DefinitionDictionary = glossary();
+const DICTIONARY: LetterDictionary = dictionary();
 
 export function isDefinition(children) {
   if (typeof children === 'string') {
