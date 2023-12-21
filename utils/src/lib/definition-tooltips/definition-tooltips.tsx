@@ -1,5 +1,6 @@
 // import styles from './Definition Tooltips.module.css';
-import * as glossaryJson from './glossary.json';
+// import * as glossaryJson from './glossary.json';
+import { glossary } from './glossary';
 import { Tooltip } from 'react-tooltip';
 // import ReactDOMServer from 'react-dom/server';
 /* eslint-disable-next-line */
@@ -16,7 +17,7 @@ interface DefinitionDictionary {
   [key: string]: LetterDictionary;
 }
 
-const GLOSSARY: DefinitionDictionary = glossaryJson;
+const GLOSSARY: DefinitionDictionary = glossary;
 
 export function DefinitionTooltips(props: DefinitionTooltipsProps) {
 

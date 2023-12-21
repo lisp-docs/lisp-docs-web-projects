@@ -1,6 +1,6 @@
 {
   "name": "@lisp-docs/utils",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "license": "MIT",
   "description": "Common Lisp Technical Reference Tooltips and Links",
   "sideEffects": true,
