@@ -5,6 +5,12 @@ import { DefinitionTooltips, ReferenceAid, getLink } from '@lisp-docs/utils';
 // import NxWelcome from './nx-welcome';
 
 export function App() {
+
+  function getDefinitionTooltips(words) {
+    return words.split(" ").map((word, index) => {
+      return <p key={index}><DefinitionTooltips key={index}>{word}</DefinitionTooltips></p>
+    })
+  }
   return (
     <div>
       {/* <NxWelcome title="lisp-docs-web-projects" /> */}
@@ -29,6 +35,13 @@ export function App() {
       </a>
       <br />
       <DefinitionTooltips>form</DefinitionTooltips>
+      <DefinitionTooltips><p>form</p></DefinitionTooltips>
+      <DefinitionTooltips><p>1</p></DefinitionTooltips>
+      <DefinitionTooltips>1</DefinitionTooltips>
+      <DefinitionTooltips></DefinitionTooltips>
+      <DefinitionTooltips><span></span></DefinitionTooltips>
+      {getDefinitionTooltips("form symbol macro 1+ + +1 1 2 3 4 5 % $ askdmawkldmalwk ")}
+      
       {/* {getLink("progn")} */}
     </div>
   );

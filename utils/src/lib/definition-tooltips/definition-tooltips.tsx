@@ -26,14 +26,30 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
       return props.term;
     }
     let found = false;
+    // let passNumber = 0;
     let curr = props.children;
     while (!found) {
+      // passNumber++;
       if (typeof curr === "string") {
         found = true;
         return curr;
-      } else if (typeof props.children === "object" && "props" in props.children) {
+      } else if (typeof props.children === "object" && "props" in props.children) { // this is always true...
         curr = props.children.props.children;
-      }
+        // console.debug(curr);
+        // console.debug(props)
+        if (curr === undefined) {
+          found = true;
+          return null;
+        }
+        // found = true; return null;
+      } else {
+        found = true;
+        return null;
+      };
+      // if (passNumber > 2) {
+      //   found = true;
+      //   return null;
+      // }
     }
   }
 
@@ -41,9 +57,11 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
     const innerString = getInnerString();
     if (typeof innerString === 'string') {
       const letterIndex = innerString[0];
-      const letterDict = GLOSSARY[letterIndex];
-      const found = innerString in letterDict;
-      return found;
+      if (letterIndex in GLOSSARY) {
+        const letterDict = GLOSSARY[letterIndex];
+        const found = innerString in letterDict;
+        return found;
+      } else return false;
     } else {
       return false;
     }
