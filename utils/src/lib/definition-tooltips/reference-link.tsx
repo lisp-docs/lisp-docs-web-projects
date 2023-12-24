@@ -30,9 +30,11 @@ const DICTIONARY: LetterDictionary = dictionary();
 export function isDefinition(children) {
   if (typeof children === 'string') {
     const letterIndex = children[0];
-    const letterDict = GLOSSARY[letterIndex];
-    const found = children in letterDict;
-    return found;
+    if (letterIndex in GLOSSARY) {
+      const letterDict = GLOSSARY[letterIndex];
+      const found = children in letterDict;
+      return found;
+    } else return false;
   } else {
     return false;
   }
