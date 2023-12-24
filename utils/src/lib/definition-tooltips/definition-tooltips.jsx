@@ -1,26 +1,31 @@
 // import styles from './Definition Tooltips.module.css';
 // import * as glossaryJson from './glossary.json';
 import { glossary } from './glossary';
-import { Tooltip } from 'react-tooltip';
+// import { Tooltip } from 'react-tooltip';
+// import {FloatingOverlay} from '@floating-ui/react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
+
 // import ReactDOMServer from 'react-dom/server';
 /* eslint-disable-next-line */
-export interface DefinitionTooltipsProps {
-  children?: React.ReactNode;
-  term?: string;
-}
+// export interface DefinitionTooltipsProps {
+//   children?: React.ReactNode;
+//   term?: string;
+// }
 
-interface LetterDictionary {
-  [key: string]: string;
-}
+// interface LetterDictionary {
+//   [key: string]: string;
+// }
 
-interface DefinitionDictionary {
-  [key: string]: LetterDictionary;
-}
+// interface DefinitionDictionary {
+//   [key: string]: LetterDictionary;
+// }
 
-const GLOSSARY: DefinitionDictionary = glossary();
+// const GLOSSARY: DefinitionDictionary = glossary();
+const GLOSSARY = glossary();
 
-export function DefinitionTooltips(props: DefinitionTooltipsProps) {
-
+// export function DefinitionTooltips(props: DefinitionTooltipsProps) {
+export function DefinitionTooltips(props) {
   function getInnerString() {
     if (props.term) {
       return props.term;
@@ -30,10 +35,14 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
     let curr = props.children;
     while (!found) {
       // passNumber++;
-      if (typeof curr === "string") {
+      if (typeof curr === 'string') {
         found = true;
         return curr;
-      } else if (typeof props.children === "object" && "props" in props.children) { // this is always true...
+      } else if (
+        typeof props.children === 'object' &&
+        'props' in props.children
+      ) {
+        // this is always true...
         curr = props.children.props.children;
         // console.debug(curr);
         // console.debug(props)
@@ -45,7 +54,7 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
       } else {
         found = true;
         return null;
-      };
+      }
       // if (passNumber > 2) {
       //   found = true;
       //   return null;
@@ -81,17 +90,25 @@ export function DefinitionTooltips(props: DefinitionTooltipsProps) {
     const innerString = getInnerString();
     if (isDefinition() && typeof innerString === 'string') {
       const definition = getDefinition();
-      // TODO replace Tooltip with https://github.com/atomiks/tippyjs
       return (
         <span
-          data-tooltip-content={definition}
-          data-tooltip-id={innerString}
+        // data-tooltip-content={definition}
+        // data-tooltip-id={innerString}
         >
-          {props.children}
+          
           {/* https://github.com/ReactTooltip/react-tooltip/issues/210 */}
           {/* https://stackoverflow.com/questions/41928567/div-cannot-appear-as-a-descendant-of-p */}
           {/* className={styles.mw40} */}
-          <Tooltip id={innerString} style={{maxWidth: "40%"}} wrapper="span"/>
+          {/* <FloatingOverlay>hello world!</FloatingOverlay> */}
+            {/* {props.children} */}
+          <Tippy content={<p dangerouslySetInnerHTML={{ __html: definition }} />}>
+            {/* {definition} */}
+            <span>{props.children}</span>
+          </Tippy>
+          {/* <Tippy content={<span>Tooltip</span>}>
+            <button>My button</button>
+          </Tippy> */}
+          {/* <Tooltip id={innerString} style={{maxWidth: "40%"}} wrapper="span"/> */}
         </span>
       );
     } else {
