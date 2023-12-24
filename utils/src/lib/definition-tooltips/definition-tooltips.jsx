@@ -1,8 +1,6 @@
 // import styles from './Definition Tooltips.module.css';
 // import * as glossaryJson from './glossary.json';
 import { glossary } from './glossary';
-// import { Tooltip } from 'react-tooltip';
-// import {FloatingOverlay} from '@floating-ui/react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
@@ -31,10 +29,8 @@ export function DefinitionTooltips(props) {
       return props.term;
     }
     let found = false;
-    // let passNumber = 0;
     let curr = props.children;
     while (!found) {
-      // passNumber++;
       if (typeof curr === 'string') {
         found = true;
         return curr;
@@ -44,21 +40,14 @@ export function DefinitionTooltips(props) {
       ) {
         // this is always true...
         curr = props.children.props.children;
-        // console.debug(curr);
-        // console.debug(props)
         if (curr === undefined) {
           found = true;
           return null;
         }
-        // found = true; return null;
       } else {
         found = true;
         return null;
       }
-      // if (passNumber > 2) {
-      //   found = true;
-      //   return null;
-      // }
     }
   }
 
@@ -91,25 +80,9 @@ export function DefinitionTooltips(props) {
     if (isDefinition() && typeof innerString === 'string') {
       const definition = getDefinition();
       return (
-        <span
-        // data-tooltip-content={definition}
-        // data-tooltip-id={innerString}
-        >
-          
-          {/* https://github.com/ReactTooltip/react-tooltip/issues/210 */}
-          {/* https://stackoverflow.com/questions/41928567/div-cannot-appear-as-a-descendant-of-p */}
-          {/* className={styles.mw40} */}
-          {/* <FloatingOverlay>hello world!</FloatingOverlay> */}
-            {/* {props.children} */}
-          <Tippy content={<p dangerouslySetInnerHTML={{ __html: definition }} />}>
-            {/* {definition} */}
+          <Tippy content={<p dangerouslySetInnerHTML={{ __html: definition }} /> }>
             <span>{props.children}</span>
           </Tippy>
-          {/* <Tippy content={<span>Tooltip</span>}>
-            <button>My button</button>
-          </Tippy> */}
-          {/* <Tooltip id={innerString} style={{maxWidth: "40%"}} wrapper="span"/> */}
-        </span>
       );
     } else {
       return props.children;
