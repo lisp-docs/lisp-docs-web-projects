@@ -21,8 +21,8 @@ interface DefinitionDictionary {
 }
 
 const REFERENCE_URL =
-  'https://lisp-docs.github.io/cl-language-reference/docs/chap-26/';
-const LOCAL_DEFINITION = '/docs/chap-26/';
+  'https://lisp-docs.github.io/cl-language-reference/chap-26/';
+const LOCAL_DEFINITION = '/chap-26/';
 const DICTIONARY_URL = 'https://lisp-docs.github.io/cl-language-reference/';
 const GLOSSARY: DefinitionDictionary = glossary();
 const DICTIONARY: LetterDictionary = dictionary();
